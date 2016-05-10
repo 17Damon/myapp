@@ -12,7 +12,7 @@ var controller = {};
 controller.admin = require('admin_controller');
 controller.user = require('user_controller');
 controller.thread = require('thread_controller');
-controller.permission = require('permission_Controller');
+controller.permission = require('permission_controller');
 
 //baseController
 function baseController(req, res) {
