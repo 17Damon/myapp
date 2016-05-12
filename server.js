@@ -3,6 +3,7 @@
  */
 'use strict'
 var express = require('express');
+var favicon = require('serve-favicon');
 var reWrite = require('express-urlrewrite');
 var bodyParser = require('body-parser');
 //baseController注册
@@ -11,6 +12,9 @@ var app = express();
 
 //使用bodyParser
 app.use(bodyParser.json());
+//图标
+app.use(require('serve-favicon')(__dirname+'/favicon.ico'));
+
 
 //所有请求进入
 app.use(function (req, res, next) {
@@ -19,13 +23,14 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use('/',express.static('./'));
+//加载根路径
+// app.use('/',express.static('./'));
 
 //改写URL
-// app.use(reWrite(
-//     '/api/management/*',
-//     '/api/management'
-// ));
+app.use(reWrite(
+    '/*',
+    '/api/management'
+));
 
 //转向/api/management处理
 app.all('/api/management', (req, res, next) => {
