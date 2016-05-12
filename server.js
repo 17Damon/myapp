@@ -12,6 +12,7 @@ var app = express();
 
 //使用bodyParser
 app.use(bodyParser.json());
+
 //图标
 app.use(require('serve-favicon')(__dirname+'/favicon.ico'));
 
