@@ -45,6 +45,13 @@ dao.query = function (req, res, module, method) {
         });
 }
 
+//go_test
+dao.go = function (req, res, module, method) {
+    //some code
+    console.log('permissionDao-go');
+    return true;
+}
+
 //queryAql
 dao.queryAql = function (req, res, module, method) {
     //some code

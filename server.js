@@ -32,11 +32,9 @@ app.all('/api/management', (req, res, next) => {
     //测试BODY
     req.body = {
         //controller定向
-        object: 'permission',
+        object: 'thread',
         //controllerFunction定向
-        methodName: 'query',
-        targetFid: 'rocketry',
-        tid: '11',
+        methodName: 'move',
         operation:'removePost',
         pid:'12'
     }

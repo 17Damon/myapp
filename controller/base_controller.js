@@ -18,8 +18,12 @@ controller.permission = require('permission_controller');
 function baseController(req, res) {
     //code
     //权限校验
-    controller.permission(req, res, 'permission', 'query')
-        .then(() => {
+    if(!controller.permission(req, res, 'permission', 'go')){
+        return Promise.reject(
+                'Permission can not [' + req.body.object + ']&&'+'['+req.body.methodName+']'
+        )
+    }
+        // .then(() => {
 
             //调度指向参数
             //module模块
@@ -39,8 +43,8 @@ function baseController(req, res) {
                 // }
                 throw    'baseController can not find controller[' + module + ']'
             }
-            return controller[module](obj);
-        })
+            return controller[module](req, res, module, method);
+        // })
 }
 
 //return

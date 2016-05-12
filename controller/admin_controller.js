@@ -3,7 +3,7 @@
  */
 'use strict'
 //adminController
-function adminController(req , res) {
+function adminController(req,res,module,method) {
     //promise
     return 'admin';
 }

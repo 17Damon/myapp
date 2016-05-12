@@ -37,6 +37,14 @@ service.query = function (req, res, module, method) {
     return baseDao(req, res, module, method);
 }
 
+//query
+service.go = function (req, res, module, method) {
+    //some code
+
+    //promise
+    return baseDao(req, res, module, method);
+}
+
 //queryAql
 service.queryAql = function (req, res, module, method) {
     //some code

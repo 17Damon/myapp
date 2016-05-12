@@ -9,47 +9,44 @@ module.paths.push('./dao');
 var baseDao = require('base_dao');
 
 //threadService
-function threadService(req, res) {
+function threadService(req, res, module, method) {
     //some code
     
     //promise
     console.log('threadService');
-    return service[req.body.methodName](req, res);
+    return service[req.body.methodName](req, res, module, method);
 }
 
 //功能Service--start--
 var service = {};
 
 //insert
-service.insert = function (req, res) {
+service.insert = function (req, res, module, method) {
     //some code
     
     console.log('threadService-insert');
     //promise
-    return baseDao(req, res);
+    return baseDao(req, res, module, method);
 }
 
 //edit
-service.edit = function (req, res) {
+service.edit = function (req, res, module, method) {
     //some code
-    let editPromise = new Promise(function(resolve){
-        resolve({edit:'edit'});
-    });
-    console.log('threadService-edit');
+
     //promise
-    return editPromise;
+    return baseDao(req, res, module, method);
 }
 
 //move
-service.move = function (req, res) {
+service.move = function (req, res, module, method) {
     //some code
     console.log('threadService-move');
     //promise
-    return baseDao(req, res);
+    return baseDao(req, res, module, method);
 }
 
 //delete
-service.delete = function (req, res) {
+service.delete = function (req, res, module, method) {
     //some code
 
     //promise
@@ -57,11 +54,11 @@ service.delete = function (req, res) {
 }
 
 //queryAql
-service.queryAql = function (req, res) {
+service.queryAql = function (req, res, module, method) {
     //some code
         
     //promise
-    return baseDao(req, res);
+    return baseDao(req, res, module, method);
 }
 
 //功能Service---end---

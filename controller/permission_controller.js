@@ -20,6 +20,14 @@ function permissionController(req,res,module,method) {
 //功能--start--
 var controller = {};
 
+//go
+controller.go = function (req, res,module,method) {
+    //some code
+
+    //promise
+    return baseServirce(req, res,module,method);
+}
+
 //query
 controller.query = function (req, res,module,method) {
     //some code

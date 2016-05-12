@@ -7,7 +7,7 @@
 
 
 //userController
-function userController(req , res ) {
+function userController(req,res,module,method ) {
     //promise
     return 'user';
 }

@@ -13,19 +13,19 @@ var tokill = {tokill: ['_rev','_id','_key']};
 var db = require('database');
 
 //threadDao
-function threadDao(req, res) {
+function threadDao(req, res, module, method) {
     //code
 
     //promise
     console.log('threadDao');
-    return dao[req.body.methodName](req, res);
+    return dao[method](req, res, module, method);
 }
 
 //功能Dao--start--
 let dao = {};
 
 //insert
-dao.insert = function (req, res) {
+dao.insert = function (req, res, module, method) {
     //some code
 
     console.log('threadDao-insert')
@@ -46,7 +46,7 @@ dao.insert = function (req, res) {
 }
 
 //edit
-dao.edit = function (req, res) {
+dao.edit = function (req, res, module, method) {
     //some code
 
     //promise
@@ -54,7 +54,7 @@ dao.edit = function (req, res) {
 }
 
 //move
-dao.move = function (req, res) {
+dao.move = function (req, res, module, method) {
     console.log('threadDao-move')
 
     //returns an array of result.
@@ -71,7 +71,7 @@ dao.move = function (req, res) {
 }
 
 //delete
-dao.delete = function (req, res) {
+dao.delete = function (req, res, module, method) {
     //some code
 
     //promise
@@ -79,7 +79,7 @@ dao.delete = function (req, res) {
 }
 
 //queryAql
-dao.queryAql = function (req, res) {
+dao.queryAql = function (req, res, module, method) {
     //some code
 
     console.log('threadDao-queryAql')
