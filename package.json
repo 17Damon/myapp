@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start":"forever start server.js",
     "build_babel": "babel es7.js -o es5.js",
     "build_traceur": "traceur --outputLanguage es6 --experimental --dir src lib"
   },
