@@ -8,6 +8,7 @@
 module.paths.push('./controller');
 
 //allController注册
+
 var controller = {};
 controller.admin = require('admin_controller');
 controller.user = require('user_controller');

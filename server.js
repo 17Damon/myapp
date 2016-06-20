@@ -1,7 +1,7 @@
 /**
  * Created by zhubg on 2016/4/24.
  */
-'use strict'
+'use strict';
 var express = require('express');
 var favicon = require('serve-favicon');
 var reWrite = require('express-urlrewrite');
@@ -43,7 +43,7 @@ app.all('/api/management', (req, res, next) => {
         methodName: 'move',
         operation:'removePost',
         pid:'12'
-    }
+    };
     //权限判断
 
     if (!req.body)return next('bodyless!!!!');
